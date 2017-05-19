@@ -1,0 +1,1050 @@
+
+<-- FRANCINE EPSE BROU N'DRI-->
+<?xml version="1.0" encoding="iso-8859-1" standalone="yes"?>
+
+
+<!DOCTYPE sheisthecode (reseauxsociaux*)[
+
+
+//Pour chacun des éléments, on définit sa composition par <!ELEMENT
+nom_element (structure)>
+
+//
+
+reseauxsociiaux* signifie que dans un élément <sheisthecode> on peut trouver de 0 à plusieurs éléments de type <reseauxsociaux> à l'exclusion de tout autre élément
+
+definition,auteur,formateur,genre,niveauetude signifie que dans un élément personne on doit trouver un et un seul (*) élément <nom>,
+
+un et un seul élément <definition> et un ou plusieurs (+) éléments <auteur> et dans cet ordre (comme imposé par la virgule)
+
+<auteur>, <definition> etc sont des éléments qui peuvent contenir du texte comme l'indique #PCDATA. On parle de contenu mixte
+
+
+<!ELEMENT reseauxsociaux (definition,auteur,formateur,genre,niveauetude)>
+
+<!ELEMENT definition (#PCDATA)>
+
+<!ELEMENT auteur (#PCDATA)>
+
+<!ELEMENT formateur (#PCDATA)>
+
+<!ELEMENT genre (#PCDATA)>
+
+//Pour chacun des attributs, on définit sa composition par <!ATTLIST
+nom_element nom_attribut (structure)>
+
+//L'attribut genre de la balise <genre> est, ici, défini comme étant un choix imposé entre "Masculin" et "Feminin".
+
+Les valeurs possibles sont séparées par des caractères '|'. Cet attribut  indique  obligatoire avec #REQUIRED
+ 
+<! ATTLIST genre
+
+genre (Masculin | Feminin ) #REQUIRED >
+
+
+
+
+<!ELEMENT niveauetude (#PCDATA)>
+
+]>
+
+<sheisthecode>
+
+<reseauxsociaux>
+
+<definition> les reseaux sociaux est un Mode d'interactions sociales qui facilite la création et l'échange d'information et de contenus entre des individus et entre individus et organisations. Désigne aussi les plateformes qui rendent ces interactions possibles (telles que Facebook, Twitter, etc.)</definition>
+
+<auteur>Mr jean patrick est l'auteur de cette formation</auteur>
+
+<formateur>Mr Fabien kahe</formateur>
+
+<genre>feminin ou masculin</genre>
+
+<niveauetude>bac+2</niveauetude>
+
+</reseaux>
+
+</sheisthecode>
+
+
+
+
+<--MARIAM OUEDRAOGO-->
+DTD
+<?xml version="1.0" encoding="iso-8859-1"?>
+<!ELEMENT sheisthecode    (personne*)>
+<!ELEMENT personne  (nom,prenom,programme+)>
+<!ATTLIST personne>
+<!ELEMENT nom       (#PCDATA)>
+<!ELEMENT prenom    (#PCDATA)>
+<!ELEMENT programme (#PCDATA)>
+
+
+
+
+Descrition des balises:
+l'element sheisthecode est un programme crée pour la formation des jeunes femmes au metier du web et au leardership.
+personne* signifie que dans l'element <sheisthecode> on peut trouver de 0 à plusieurs éléments de type <personne> à l'exclusion de tout autre élément
+nom,prenom,programme+ veut dire que dans un élément personne on doit trouver un et un seul (*) élément <nom>, 
+un et un seul élément <prenom> et un ou plusieurs (+) éléments <programme> et dans cet ordre (comme imposé par la virgule)
+<nom>, <prenom> et <programme> sont des éléments qui peuvent contenir du texte comme l'indique #PCDATA. On parle de contenu mixte(contenir un mélange de texte et d'éléments).
+
+
+
+DOCUMENT XML
+<?xml version="1.0" encoding="iso-8859-1"?>
+<!DOCTYPE sheisthecode SYSTEM "sheisthecode.dtd">
+
+<sheisthecode>
+    <personne>
+        <nom>OUEDRAOGO</nom>
+        <prenom>Mariam</prenom>
+        <programme>coding</programme>
+    </personne>
+    <personne>
+        <nom>KOUAKOU</nom>
+        <prenom>Fanta</prenom>
+        <programme>informatique</programme>
+    </personne>
+</sheisthecode>
+
+
+<--GNALEY DIABY-->
+
+
+<?xml version="1.0"?>
+
+<!DOCTYPE sheisthecode [ 
+
+<!ELEMENT training (#PCDATA)>
+//permit to type of training
+
+<!ELEMENT gender (#PCDATA)>
+//permit to give a gender  
+
+<!ELEMENT age (#PCDATA)>
+//permite to give age
+
+<!ELEMENT programm (#PCDATA)>
+//permite to give the training diary 
+
+<!ELEMENT duration (#PCDATA)>
+//permite the duration
+] >
+
+<sheisthecode>
+<training>skills</training>
+<gender>female</gender>
+<age>18-35</age>
+<programm>leadership</programm>
+<duration>four months</duration>
+</sheisthecode>
+
+
+
+
+<--YALCOUYE MARIETOU--> 
+
+
+<?xml version="1.0" encoding="iso-8859-1" standalone="yes"?>
+
+
+<!DOCTYPE sheisthecode (coding*)[
+
+
+//Pour chacun des éléments, on définit sa composition par <!ELEMENT
+balise (contenu)>
+
+//
+
+coding* signifie que dans un élément <sheisthecode> on peut trouver de 0 à plusieurs éléments de type <definition> à l'exception de tout autre élément
+
+auteur,formateur,genre,niveauetude signifie que dans un élément personne on doit trouver un et un seul (*) élément <nom>,
+
+un et un seul élément <auteur> et un ou plusieurs (+) éléments <auteur> et dans cet ordre (comme imposé par la virgule)
+
+<auteur>, <formateur> etc sont des éléments qui peuvent contenir du texte comme l'indique #PCDATA. On parle de contenu mixte
+
+
+<!ELEMENT coding(auteur,formateur,genre,filiere)>
+
+
+<!ELEMENT auteur (#PCDATA)>
+
+<!ELEMENT formateur (#PCDATA)>
+
+<!ELEMENT genre (#PCDATA)>
+
+//Pour chacun des attributs, on définit sa composition par <!ATTLIST
+nom_element nom_attribut (structure)>
+
+//L'attribut genre de la balise <genre> est, ici, défini comme étant un choix imposé entre "Masculin" et "Feminin".
+
+Les valeurs possibles sont séparées par des caractères '|'. Cet attribut  indique  obligatoire avec #REQUIRED 
+<! ATTLIST genre
+
+genre (Masculin | Feminin ) #REQUIRED >
+
+
+<!ELEMENT filiere (#PCDATA)>
+
+]>
+
+<sheisthecode>
+
+<coding>
+
+<definition> L e coding permet à toute personne de pouvoir développer des applications web et mobile avec des langages bien définit comme (javascript,windev,html/css etc…) </definition>
+
+<auteur>Mr jean patrick est l'auteur de cette formation</auteur>
+
+<formateur>Mr Fabien kahe</formateur>
+
+<genre>feminin ou masculin</genre>
+
+<filiere>informatique développeur d’application</filiere>
+
+</coding>
+
+</sheisthecode>
+
+
+
+<--MAVI MARIE JOSEE OGOU-->
+
+<?xml version="1.0" encoding="URF-8" standalone="yes"?>
+<!-- le dtd interne-->
+<!DOCTYPE sheisthecode[
+<!ELEMENT sheisthecode (formateurs, stagiaires, acceuille, programme, modules)>
+<!ATTLIST formateurs (nom , prenoms, poste) sexe (H|F) "H">
+<!ATTLIST stagiaires (nom , prenoms, nivdetude) sexe="F">
+<!ATTLIST acceuille (secretaire*) >
+<!ATTLIST modules (type*) >
+<!ELEMENT nom (#PCDATA)>
+<!ELEMENT prenoms(#PCDATA)>
+<!ELEMENT poste (#PCDATA)>
+<!ELEMENT programme (#PCDATA)>
+<!ELEMENT type (#PCDATA)>
+]>
+<sheisthecode>
+
+<!-- contenu formateurs-->
+<formateurs>
+ <nom>Kahé</nom>
+ <prenoms>Fabien </prenoms>
+ <poste> secretaire general d'Akendewa</poste>
+ <sexe> H </sexe>
+</formateurs>
+
+<!-- contenu stagiaire-->
+<stagiaires>
+ <nom> Ogou </nom>
+ <prenoms> Mavi </prenoms>
+ <poste> bac+2 et stagiaire a sheisthecode</poste>
+ <sexe> F </sexe>
+</stagiaires>
+
+<!--le service secretariat-->
+<acceuille>
+ <secretaire> Mme Tia </secretaire>
+</acceuille>
+
+<!-- les differents modules-->
+<modules>
+ <type> leadership</type>
+</modules>
+
+<modules>
+ <type> entrepreneriat</type>
+</modules>
+
+<modules>
+ <type> reseaux sociaux</type>
+</modules>
+
+<modules>
+ <type> bureatique avancé </type>
+</modules>
+
+</sheisthecode>
+
+
+<--ARMANDE BOUA-->
+< ?XML version= » 1.0» encoding= »UTF-8 » standalone= »yes » ?>
+
+\\editee par Armande BOUA
+
+< !DOCTYPE sheisthecode[
+
+< ! ÉLÉMENT sheisthecode (coding*)>
+
+< !ÉLÉMENT coding ( cours,professeur, quiz, stagiaire)
+
+< !ÉLÉMENT cour (#pcdata)
+
+<ÉLÉMENT professeur (#pcdata)
+
+< !ÉLÉMENT quiz (#pcdata)
+
+< !ÉLÉMENT stagiaire (#pcdata)]>
+
+
+
+<sheisthecode>
+
+<cocding>
+
+<cour> ruby <\cour>
+
+<professeur> Fabien KAHE <\cour>
+
+<quiz> github <\quiz>
+
+<stagiaire> Armande BOUA <\stagiaire>
+
+<\coding>
+
+<\sheisthecode>
+
+
+
+<--KACOUO PHILOMENE KOFFI-->
+<?xml version ="1.0" encoding ="iso-8859-1" standalone ="yes" ?>
+<!-- ceci est la declaration type d'un document xml, standalone=yes parce que ma dtd est interne-->
+
+<!-- Koffi Kacouo Philomène-->
+<!-- l'element sheisthecode represente mon body
+les élément president,formateur,conferencier,boursiere,duree,module constituent le corps de ma dtd
+pcdata pour dire que ce sont des chaines de caractères, 
+(nom_module)+ pour dire qu'il peut avoir un ou plusieurs modules-->
+
+<!DOCTYPE  sheisthecode [ <!ELEMENT sheisthecode (president,formateur,conferencier,boursiere,duree,module)>
+                            <!ELEMENT president (nom,prenoms)> 
+                                  <!ELEMENT nom (#PCDATA)>
+                                  <!ELEMENT prenoms (#PCDATA)>
+                            <!ELEMENT formateur (nom,prenoms,module)>
+                                  <!ELEMENT nom (#PCDATA)>
+                                  <!ELEMENT prenoms (#PCDATA)>
+                                  <!ELEMENT module (#PCDATA)>
+                            <!ELEMENT conferencier (nom,prenoms,theme)>
+                                  <!ELEMENT nom (#PCDATA)>
+                                  <!ELEMENT prenoms (#PCDATA)>
+                                  <!ELEMENT module (#PCDATA)>
+                            <!ELEMENT boursiere (nom,prenoms,age,specialite)>
+                                  <!ELEMENT nom (#PCDATA)>
+                                  <!ELEMENT prenoms (#PCDATA)>
+                                  <!ELEMENT age (#PCDATA)>
+                                  <!ELEMENT specialite (#PCDATA)>
+                            <!ELEMENT duree (#PCDATA)>
+                            <!ELEMENT module (nom_module)+>
+                            <!ELEMENT nom_module (#PCDATA)>
+]>
+
+
+ <sheisthecode>
+ 	<president>
+
+ 		<nom>Ehouman</nom>
+ 		<prenoms>Jean Patrick</prenoms>
+
+ 	</president>
+
+ 	<conferencier>
+ 		<nom>Assonvo</nom>
+ 		<prenoms>Marie Anne</prenoms>
+ 		<theme>l'Anglais en entreprise</theme>
+
+ 		
+    </conferencier>
+
+ 	<formateur>
+ 		<nom>Kahe</nom>
+ 		<prenoms>Fabien</prenoms>
+ 		<module>Coding</module>
+ 	</formateur>
+
+ 	<module>
+ 		<nom_module>Coding</nom_module>
+ 		<nom_module>REseaux Sociaux</nom_module>
+ 		<nom_module>Entrepreneuriat et Leadership</nom_module>
+ 	</module>
+
+ 	<boursiere>
+ 		<nom>Koffi</nom>
+ 		<prenoms>Kacouo Philomène</prenoms>
+ 		<age> 26ans</age>
+ 		<specialite>Coding</specialite>
+ 	</boursiere>
+
+ 	<duree>	4 mois </duree>
+
+
+</sheisthecode>
+
+
+
+<--WAISE SAIBA-->
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- definition du type du document -->
+<!DOCTYPE sheisthecode [
+        <!--
+        <!ELEMENT nom (contenu)>
+        ici l on definit lélémént et son contenu ( composé d'autre element
+        -->
+        <!ELEMENT sheisthecode (langage,instructeur,groupe,description,lieu)>
+
+        <!--
+         <!ELEMENT nom (type)>
+         donc ici l'on defini l'élément et son type
+         -->
+        <!ELEMENT langage (#PCDATA)>
+        <!ELEMENT instructeur (#PCDATA)>
+        <!ELEMENT groupe (#PCDATA)>
+        <!ELEMENT description (#PCDATA)>
+        <!ELEMENT lieu (#PCDATA)>
+        ]>
+
+<!-- ici nous utilison la definition de notre document definit ci-dessus-->
+<sheisthecode>
+    <langage>html css javascript</langage>
+    <instructeur>Mr Fabien Gahe</instructeur>
+    <groupe>2</groupe>
+    <description>td,tp</description>
+    <lieu>A akandewa 8 eme tranche</lieu>
+</sheisthecode>
+
+
+<--CAROLE ADOU-->
+<?xml version="1.0"?>
+<!DOCTYPE sheisthecode[
+<!ELEMENT programme(formation)>
+<!ELEMENT formation(personne)>
+<!ELEMENT personne(sexe,age)>
+<!ELEMENT sexe (H|F) "F">
+<!ELEMENT age (18|35)>]
+
+
+
+<--FLEUR BOLOU-->
+<?xml version="1.0" encoding="UTF-8"?>
+	<!DOCTYPE sheisthecode [
+
+     <!-- renseigner les modules de formation de sheisthecode -->
+     <!ELEMENT sheisthecode (module)*>
+
+     <!-- lister les caractéristiques d'un module -->
+     <!ELEMENT module (libelle, duree, lieu_de_formation, formateur, type_evaluation)>
+
+     <!-- le nom du module -->
+     <!ELEMENT libelle (#PCDATA)>
+
+     <!-- la duree de formation -->
+     <!ELEMENT duree (#PCDATA)>
+
+     <!-- lieu où se deroule la formation -->
+     <!ELEMENT lieu_de_formation (#PCDATA)>
+
+     <!-- nom et prénom du formateur -->
+     <!ELEMENT formateur (#PCDATA)>
+     
+     <!-- le type d'evaluation -->
+     <!ELEMENT type_evaluation (#PCDATA)>
+
+	]>
+
+
+	<sheisthecode>
+
+	<module>
+		<libelle>Coding</libelle>
+		<duree>4 semaines</duree>
+		<lieu_de_formation>Akendewa</lieu_de_formation>
+		<formateur>Fabien Kahe</formateur>
+		<type_evaluation>google form</type_evaluation>
+	</module>
+	
+        </sheisthecode>
+
+
+<--ENA SANDRINE-->
+<?xml version ="1.0" encoding="UTF-8" standalone="yes"?>
+<!DOCTYPE sheisthecode[
+<!-- renseigner plusieurs personnes -->
+<!ELEMENT sheisthecode (personne*)>
+<!-- donnees personnelles de chaque personnes -->
+<!ELEMENT personne (nom, prenom , date_de_naissance, formation_de_base, specialisation)>
+<!-- nom de famille -->
+<!ELEMENT nom (#PCDATA)>
+<!-- prénom -->
+<!ELEMENT prenom (#PCDATA)>
+<!-- date de naissance -->
+<!ELEMENT date_de_naissance (#PCDATA)>
+<!-- formation avant de suivre le programme -->
+<!ELEMENT formation_de_base (#PCDATA)>
+<!-- formation pendant le programme -->
+<!ELEMENT specialisation (#PCDATA)>
+
+]>
+
+<sheisthecode>
+  <personne>
+    <nom>AHOSSEY</nom>
+    <prenoms>ADZO ENA SANDRINE</prenoms>
+    <date_de_naissance>09-01-1984</date_de_naissance>
+    <formation_de_base>ELECTRONIQUE</formation_de_base>
+    <specialisation>coding</specialisation>
+
+  </personne>
+</sheisthecode>
+
+
+<--SONIA TANO-->
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<!DOCTYPE sheisthecode [
+ <!ELEMENT sheisthecode (personne)*>
+ <!ELEMENT personne (nom?, prénom?, date_de_naissance?,genre?, ethnie?, email?, commune?, telephone?, nom_père? ,nom_mère?)>
+ <!ELEMENT nom (#PCDATA)>
+ <!ELEMENT prénom (#PCDATA)>
+ <!ELEMENT date_de_naissance (#PCDATA)>
+ <!ELEMENT genre (#PCDATA | masculin | féminin)*>
+<!ELEMENT ethnie (#PCDATA ) >
+<!ELEMENT email (#PCDATA)>
+<!ELEMENT commune (#PCDATA)>
+<!ELEMENT telephone (#PCDATA)>
+<!ELEMENT nom_père (#PCDATA)>
+<!ELEMENT nom_mère (#PCDATA)>
+]>
+<sheisthecode>
+  <personne>
+    <nom>tano</nom>
+    <prénom>evelyne</prénom>
+    <date_de_naissance>24-06-1990</date_de_naissance>
+    <genre>feminin</genre>
+    <ethnie>baoule</ethnie>
+    <email>lesperlesdavila@gmail.com</email>
+    <commune>cocody</commune>
+    <telephone>47748771</telephone>
+    <nom_père>tano</nom_père>
+    <nom_mère>Diomande</nom_mère>
+  </personne>
+</sheisthecode>
+
+
+<--PRISCA FAY-->
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE sheisthecode [
+
+<!ELEMENT programme (personne, age, formation, specialisation, initiateur)>
+<!ELEMENT personne (#PCDATA)>
+<!ELEMENT age (#PCDATA)>
+<!ELEMENT formation (#PCDATA)>
+<!ELEMENT specialisation (#PCDATA)>
+<!ELEMENT initiateur (#PCDATA)>
+
+] >
+ 
+<sheisthecode>
+<personne> femme </personne>
+<age> 18 à 35 ans </age>
+<formation> leadership, informatique, entrepreneuriat,  bureatique, réseaux sociaux </formation>
+<specialisation> coding, leadership, entrepreneuriat </specialisation>
+<initiateur> Jean Patrick Ehouman </initiateur>
+</sheisthecode>
+
+
+
+Déclaration de l'élément personne doit contenir le genre (homme ou femme) ici femme.
+Déclaration de l'élément age doit contenir des nombres.
+Déclaration de l'élément formation contient la liste des formations données entrepreneuriat, bureautique, coding ...
+Déclaration de l'élément spécialisation doit contenir obligatoirement coding, leadership, entrepreneuriat
+Déclaration de l'élément initiateur doit contenir un nom et des prénomms 
+
+
+
+
+
+
+<--ANDREA SOW-->
+//Sow Andréa clémence
+
+<!ELEMENT sheisthecode (libelle,formateur,description)>
+<!ELEMENT entrepreneuriat (#PCDATA)>
+<!ELEMENT coding (#PCDATA)>
+<!ELEMENT reseaux sociaux(#PCDATA)>
+<!ELEMENT leadership(#PCDATA)>
+
+
+
+<--TANO BLA ADELINE AMAN-->
+<!DOCTYPE liste_de_gens [
+ <!ELEMENT liste_de_gens (personne)*>
+ <!ELEMENT personne (nom, date_de_naissance?, genre?, numero_de_secu?)>
+ <!ELEMENT nom (#PCDATA)>
+ <!ELEMENT date_de_naissance (#PCDATA)>
+ <!ELEMENT genre (#PCDATA | masculin | féminin) "féminin">
+ <!ELEMENT numero_de_secu (#PCDATA)>
+]>
+
+<personne>
+    <nom>ado</nom>
+    <prenom>Josiane</prenom>
+    <age>24</age>
+</personne>
+
+
+<personne>
+    <prenom>John</prenom>
+    <nom>kacou</nom>
+    <age>24</age>
+</personne>
+
+<personne>
+    <prenom>Davide</prenom>
+    <age>24</age>
+</personne>
+
+
+<personne>
+    <nom>Dion</nom>
+    <prenom>Jean</prenom>
+    <age>24</age>
+    <date>12/12/2012</date>
+]>
+
+
+<--KOUADIO EMILIENNE-->
+<?xml version="1.0"?>
+<!DOCTYPE sheisthecode [
+
+
+<!ELEMENT coding (sites,administration,maintenance)>
+<!ELEMENT sites (#PCDATA)> 
+<!ELEMENT administration (#PCDATA)>
+<!ELEMENT maintenance (#PCDATA)>
+
+
+
+<!ELEMENT entrepreneuriat (idée,analyse,réalisation)>
+<!ELEMENT idée (#PCDATA)>
+<!ELEMENT analyse (#PCDATA) >
+<!ELEMENT réalisation (#PCDATA)>
+
+
+<!ELEMENT web (connection,lecture,production)>
+<!ELEMENT connection (#PCDATA)>
+<!ELEMENT lecture (#PCDATA)>
+<!ELEMENT production (#PCDATA)>
+
+
+
+
+<!ELEMENT leadership (former,impacter,gouverner)>
+<!ELEMENT former (#PCDATA)>
+<!ELEMENT impacter (#PCDATA)>
+<!ELEMENT gouverner (#PCDATA)>
+
+
+
+
+<!ELEMENT conférence (partage,témoignage,motivation)>
+<!ELEMENT partage (#PCDATA)>
+<!ELEMENT témoignage (#PCDATA)>
+<!ELEMENT motivation (#PCDATA)>
+
+
+<--ALICE KOUA-->
+<?xml version="1.0"?>
+<!-- DTD pour l'inscription sur le site -->
+<!DOCTYPE sheisthecode[
+<!ELEMENT inscription     (personne*)>
+<!ELEMENT personne  (nom,prenom,adresse_email,date_de_naissance,niveau_d'etude,filiere_d'etude,"+)>
+<!ATTLIST personne sexe (F) "F">
+<!ELEMENT nom       (#PCDATA)>
+<!ELEMENT prenom    (#PCDATA)
+<!ELEMENT adresse_email (#PCDATA)>
+<!ELEMENT date_de_naissance (#PCDATA)>
+<!ELEMENT niveau_d'etude (#PCDATA)>
+<!ATTLIST niveau_d'etude ("BEPC"| "BAC"| "BAC+1"| "BAC+2"| "BAC+3"|  "BAC+4"| "BAC+5"| "AUTRE") #REQUIRED>
+<!ELEMENT filiered'etude (#PCDATA)>]
+
+<?xml version="1.0"?>
+<!-- DTD pour voir ou ajouter une conférence sur le site -->
+<!DOCTYPE sheisthecode[
+<!ELEMENT conference    (theme, conférencier, date)
+<!ELEMENT theme (#PCDATA)>
+<!ELEMENT conférencier (#PCDATA)>
+<!ELEMENT date (#PCDATA)>
+<!ATTLIST  jour (lundi|mardi|mercredi|jeudi|vendredi|samedi|dimanche) #REQUIRED
+    		mois   #REQUIRED
+              		 année  #REQUIRED>]
+
+
+<?xml version="1.0"?>
+<!-- DTD pour voir  un témoignage sur le site -->
+<!DOCTYPE sheisthecode[
+<!ELEMENT temoignage  (titre, auteur, description, date)
+<!ELEMENT titre (#PCDATA)>
+<!ELEMENT auteur (#PCDATA)>
+<!ELEMENT description (#PCDATA)>
+<!ELEMENT date (#PCDATA)>
+<!ATTLIST date jour (lundi|mardi|mercredi|jeudi|vendredi|samedi|dimanche) #REQUIRED
+    		mois   #REQUIRED
+              		 année  #REQUIRED>]
+
+
+<?xml version="1.0"?>
+<!-- DTD pour avoir plus d’informations pour le cours de coding sur le site -->
+<!DOCTYPE sheisthecode[
+<!ELEMENT coding  (titre, auteur, description)
+<!ELEMENT titre (#PCDATA)>
+<!ELEMENT auteur (#PCDATA)>
+<!ELEMENT description (#PCDATA)>]
+
+
+<?xml version="1.0"?>
+<!-- DTD pour voir un article du blog sur le site -->
+<!DOCTYPE sheisthecode[
+<!ELEMENT article (titre, auteur, description)>
+<!ELEMENT titre (#PCDATA)>
+<!ELEMENT auteur (#PCDATA)>
+<!ELEMENT description (#PCDATA)>]
+
+
+
+<--ANGE DOMINIQUE RAISSA ABIE-->
+<?XML version="1.0"?>
+ 
+editée par Ange Dominique Raissa Abié
+
+<!DOCTYPE sheisthecode[
+
+<!ELEMENT sheisthecode(coding)>
+
+<!ELEMENT coding(lieu,cours,professeur,stagiaire)>
+
+<!ELEMENT lieu(#PCDATA)>
+
+<!ELEMENT cours(#PCDATA)>
+
+<!ELEMENT professeur(#PCDATA)>
+
+<!ELEMENT stagiaire(#PCDATA)]>
+
+
+<sheisthecode>
+   
+      <coding>
+
+         <lieu> Akendewa </lieu>
+        
+         <cours> HTML & CSS </cours>
+
+         <professeur> Fabien Kahe </professeur>
+   
+         <stagiaire> Ange Abié </stagiaire>
+      
+      </coding>
+
+</sheisthecode>
+
+
+
+
+<--AFFOUE SONIA KOFFI-->
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE sheisthecode [
+<!ELEMENT coding (langage,instructeur,groupe,description,lieu)>
+<!ELEMENT langage (#PCDATA)>
+<!ELEMENT instructeur (#PCDATA)>
+<!ELEMENT groupe (#PCDATA)>
+<!ELEMENT decription (#PCDATA)>
+<!ELEMENT lieu (#PCDATA)> 
+
+
+] >
+
+<sheisthecode>
+   <langage>html,css,javascript </langage>
+   <instructeur>Mr Fabien Gahe </instructeur>
+   <groupe>2</groupe>
+   <description>td,tp</description>
+   <lieu>a akendewa 8éme tranches</lieu>	
+
+
+</sheisthecode>
+
+
+
+<--HORTENSE YEBOUA-->
+      
+   <xml version="1.0"?>
+
+  DOCTYPE sheisthecode{
+   
+
+  <formation></formation>
+
+<reseaux sociaux></reseaux sociaux>
+
+<coding></coding>
+
+<entreprenariat></entreprenariat>
+
+<leadership></leadership>
+
+
+
+
+<--CYNTHIA AREMOU-->
+<?xml version="1.0" encoding="UTF-8"?>
+
+	<!DOCTYPE Sheisthecode [
+    
+    <!ELEMENT formation (début,coders,recherche)>
+    <!ELEMENT début (#PCDATA)>
+    <!ELEMENT coders (#PCDATA)>
+    <!ELEMENT recherche (#PCDATA)>
+    ]>
+    <Sheisthecode>
+    	<formation>
+    		<début>Ce document a été fait par Cynthia Aremou, </début>
+    		<coders>elle a d'ailleurs fait tout le code de ce contenue. </coders>
+    		<recherche>Elle a maintenant acquis certaines conaissances en ce domaine.</recherche>
+    	</formation>
+    </Sheisthecode>
+
+    	//la balise "sheisthecode" sert à l'affichage du conetnu du document.
+    	//la balise "formation" sert à structurer le document en paragraphe.
+    	//la balise "début" permet de donner le nom de l'auteur du document.
+    	//les balises "coders" et "recherches" servent juste à donner du contenue.
+
+    
+
+<--ABIBA KONATE-->
+<?xml version="1.0" encoding="iso-8859-1" standalone="yes"?>
+<!DOCTYPE SHEISTHECODE [
+<!ELEMENT SHEISTHECODE (module_coding)>
+<!ELEMENT module_coding (cours)>
+<!ELEMENT cours (web,ruby)>
+<!ELEMENT web (#PCDATA)>
+<!ELEMENT ruby (#PCDATA)>
+]>
+<!-- konate abiba contenu du module coding du programme sheisthecode-->
+<SHEISTHECODE>
+
+	<module_coding>
+
+		<cours>
+			<web>html,css,javascript(structuration,design et animation)</web>
+			<ruby>language de programmation</ruby>
+		</cours>
+
+	</module_coding>
+
+</SHEISTHECODE>
+
+
+
+<--BAMBA ANGE-->
+
+<!ELEMENT sheisthecode (programme) >
+<!ELEMENT programme (personne, sexe,formation)>
+<!ELEMENT personne(nom,prenom,tel?,email)>
+<!ELEMENT formation (coding, leadership, entrepreneuriat)>
+<!ELEMENT nom (#PCDATA) >
+<!ELEMENT prenom (#PCDATA) >
+<!ELEMENT tel (#PCDATA) >
+<!ELEMENT email (#PCDATA) >
+ <!ELEMENT coding(#PCDATA) >
+<!ELEMENT leadership (#PCDATA) >
+<!ELEMENT entrepreneuriat (#PCDATA) >
+<! ATTLIST personne
+age CDATA #IMPLIED
+genre (Masculin | Feminin ) #REQUIRED >
+
+
+<--ENA SANDRINE-->
+<?xml version ="1.0" encoding="UTF-8" standalone="yes"?>
+<!DOCTYPE sheisthecode[
+<!-- renseigner plusieurs personnes -->
+<!ELEMENT sheisthecode (personne*)>
+<!-- donnees personnelles de chaque personnes -->
+<!ELEMENT personne (nom, prenom , date_de_naissance, formation_de_base, specialisation)>
+<!-- nom de famille -->
+<!ELEMENT nom (#PCDATA)>
+<!-- prénom -->
+<!ELEMENT prenom (#PCDATA)>
+<!-- date de naissance -->
+<!ELEMENT date_de_naissance (#PCDATA)>
+<!-- formation avant de suivre le programme -->
+<!ELEMENT formation_de_base (#PCDATA)>
+<!-- formation pendant le programme -->
+<!ELEMENT specialisation (#PCDATA)>
+
+]>
+
+<sheisthecode>
+  <personne>
+    <nom>AHOSSEY</nom>
+    <prenoms>ADZO ENA SANDRINE</prenoms>
+    <date_de_naissance>09-01-1984</date_de_naissance>
+    <formation_de_base>ELECTRONIQUE</formation_de_base>
+    <specialisation>coding</specialisation>
+
+  </personne>
+</sheisthecode>
+
+
+
+
+<--LAURIE MARIE-CHRISTELLE KAUDJIHS-->
+<?xml version = "1.0" encoding="UTF-8" standalone="yes" ?>
+ <!DOCTYPE sheisthecode [
+  
+<!--Recenser les nouvelles participantes au programme sheisthe code-->
+	<!ELEMENT sheisthecode (Inscription)>
+
+<!--different element a renseigner pour son inscription-->
+    <!ELEMENT Inscription (Nom, Prenom, Contacts, Niveau d'etude,Motivation>
+	
+ <!--Inscrire son nom de famille Exple:Kouakou-->
+	<!ELEMENT Nom (#PCDATA)>
+
+<!--inscrire ses prenoms Exple:Jean Olivier-->
+ 	 <!ELEMENT Prenoms (#PCDATA)>
+
+<!--Entrer les differents elements permettant de joindre la tierce personne--> 
+	 <!ELEMENT Contact (#PCDATA)>
+
+<!--dernier diplome ou derniere classe effectuer-->
+	 <!ELEMENT Niveau d'étude (niveau,intitule)>
+
+<!--Dire Pourquoi vous voulez participer au programme-->
+         <!ELEMENT Motivation (#PCDATA)>
+]>
+
+
+<!--EXPLE d'inscription-->
+<nom> DIBY </nom>
+<prenoms>Kyliane</prenoms>
+
+<contacts>
+   <contact type="telephone">01 02 03 04 05</contact>
+   <contact type="email">kyliane@gmail.com</contact>
+</contact>
+
+<niveau d_etude>
+  <niveau>BAC</niveau>
+  <intutile>serie D</intitule>
+</niveau d_etude>
+
+<motivation>Reseautage et developpement personnel</motivation>
+
+
+
+<--ANNABELLE N'GORAN-->
+<?xml version="1.0"  encoding="utf-8*?>
+<!DOCTYPE sheisthecode>
+<!ELEMENT programme(formation)>
+<!ELEMENT formation(personne,module)> 
+<!ELEMENT personne(nom,prenom,age,sexe)>
+<!ELEMENT nom(#PCDATA)>
+<!ELEMENT prenom(#PCDATA)>
+<!ELEMENT age(#PCDATA)>
+<!ELEMENT module(coding,marketing reseau,entrepreneuriat)>
+<!ELEMENT coding(#PCDATA)>
+<!ELEMENT marketing reseau(#PCDATA)
+<!ELEMENT entrepreneuriat(#PCDATA)>
+
+
+
+<!ATTlist personne sexe(#REQUIRED)>
+
+<!ATTlist module coding(#CDATA)>
+
+
+
+
+<sheisthecode>
+  <formation>
+      <personne>
+         <nom> </nom>
+         <prenom> </prenom>
+         <age> </age>
+
+      <module>
+
+        <coding></coding>
+        <marketing reseau></marketing reseau>
+        <entrepreneuriat> </entrepreneuriat>
+
+      </module>
+
+   <personne sexe="feminin"></personne>
+      </personne>
+
+  </formation>
+</sheisthecode>
+
+
+
+
+
+<--CLARISSE PENAWA KOUASSI-->
+<?xml version = "1.0" encoding="utf-8" standalone="yes" ?>
+<!DOCTYPE Information sur une personne[
+<!--
+        <!ELEMENT nom (contenu)>
+        ici l on definit l'élément et son contenu ( composé d'autre élément
+        -->
+        <!ELEMENT Information sur une personne (race, situation géographique, études, portrait, coordonnées)>
+
+        <!--
+         <!ELEMENT nom (type)>
+         donc ici l'on defini l'élément et son type
+         -->
+<!Element race (continent, couleur)>
+<!Element contient (#PCDATA)>
+<!Element couleur (#PCDATA)>
+
+<!Element situation géographique (pays, ville, commune, quartier?)>
+<!Element pays (#PCDATA)>
+<!Element ville (#PCDATA)>
+<!Element commune (#PCDTA)>
+<!Element quartier (#PCDATA)>
+
+<!Element études (informatique*)>
+<!Element informatique (réseaux informatiques, dévéloppeur web)>
+<!Element réseaux informatiques (#PCDATA)>
+<!Element dévéloppeur web (#PCDATA)>
+
+<!Element portrait (genre, taille, poids?)>
+<!Element genre (#PCDATA)>
+<!Element taile (#PCDATA)>
+<!Element poids (#PCDATA)>
+
+<!Element coordonnées (numéro de cellulaire, email, boite postale?)>
+<!Element numéro de cellulaire (#PCDATA)>
+<!Element email (#PCDATA)>
+<!Element boite postale EMPTY>
+]>
+
+
+
+<--NASSANABA KONE-->
+<?xml version="1.0" encoding="iso-8859-1" standalone="yes"?>
+<!DOCTYPE sheisthecode (informatique*)[
+<!ELEMENT informatique (titre, definition, auteur, formateur, diplome)>
+<!ELEMENT titre (#PCDATA)>
+<!ELEMENT definition (#PCDATA)>
+<!ELEMENT formateur (#PCDATA)>
+]>
+<sheisthecode>
+<informatique>
+<titre>coding</titre>
+<definition>Le codage, c’est la programmation informatique, ce qui permet l’écriture des programmes pour développer des logiciels, ou une page web, par exemple, mais aussi pour dire à une machine ce qu’elle doit faire, la guider. Le vrai mot français est « programmer ». « Coder » nous vient de l’anglais et est de plus en plus usité car il fait plus « je suis un super agent secret, je sais décoder le code », et cela fait moins « geek asocial derrière son écran ».</definition>
+<auteur>Mr Jean Patrick Ehouman</auteur>
+<formateur>Mr Fabien Kahe</formateur>
+<diplome>attestion</diplome>
+
+
