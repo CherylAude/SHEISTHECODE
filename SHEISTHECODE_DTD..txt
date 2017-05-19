@@ -1048,3 +1048,19 @@ genre (Masculin | Feminin ) #REQUIRED >
 <diplome>attestion</diplome>
 
 
+<--MARIE STEPHANE-->
+
+<! DOCTYPE sheisthecode>
+<! Programme (formation) ELEMENT>
+<! ELEMENT formation (personne, partenaire)>
+<! ELEMENT personne (nom, prénom, âge, numero)>
+<! ELEMENT nom (#PCDATA)>
+<! ELEMENT prenom (PCDATA)>
+<! ELEMENT partenaire (entreprise)>
+<! ELEMENT entreprise (#PCDATA)>
+<! sexe ELEMENT (#PCDATA)>
+
+<ATTRlist sexe = "feminin" (#CDATA)>
+
+
+
